@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //ES5 ECMAScript是一个语言标准，JavaScript是
+    //完全基于ECMAScript实现的脚本语言
+    //ES5是ECMAScript5简写，当前主流ES5 ES6
+    //ES5标准下，没有块级作用域
+    // if(false){
+    //     var name = "zhangsan";
+    // }
+    // console.log(name);//undefined
+
+    for(var i=1;i<3;i++){
+
+    }
+    console.log(i);//输出3
+
+    //非严格模式下，不使用var来显示声明变量，则该变量自动转换为全局变量
+    function fn1(){
+        name ="zhangsan";
+    }
+    function fn2(){
+        var name = "lisi";
+    }
+    fn1();
+    fn2();
+    console.log(name);
+
+    function fn3(){
+        console.log(this);//普通函数里面，this指向全局变量
+    }
+    fn3();
+
+    function fn4(){
+        'use strict'
+        console.log(this);//严格模式下，为undefined
+    }
+    fn4();
+
+    function judge(){
+        'use strict'
+        var result = (this === undefined?true:false);
+        return result;
+    }
+    if(judge()){
+        console.log("严格模式")
+    }
+    else{
+        console.log("不是");
+    }
+    'use strict'
+    var str ="abcde";
+    str.length=1;
+    console.log(str.length);
+    </script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var num1=19.98999;
+    a=num1.toFixed(2);
+    //toFixed(n)保留特定位数的小数，超出按四舍五入，返回的是字符串
+    console.log(a);
+    var num1 = 20;
+    var numobject = new Number(num1);
+    console.log(numobject);
+    console.log(numobject._proto_==Number.prototype);
+    numobject.toFixed();
+
+    var num2=12345.6789;//**
+    q=num2.toPrecision(1);//转换为指数化形式，并且仍然遵守四舍五入,()中表示数字个数，若大于或等于时，直接四舍五入截取
+    console.log(q);
+
+    var num3 = "abcde".charAt(3);//输出第几个字符
+    console.log(num3);
+
+    var num4 = String.fromCharCode(65,98,99);//将特定的Unicode装换为字符，转换为相应的ascll码。
+    console.log(num4);
+
+    var str ="abcdefghijk";
+    a = str.charCodeAt(0);//将特定索引位置的字符转换为Unicode码输出
+    b = str.slice(0,-1);//截取中间的字符
+    c = str.substr(0,3);//第一个数字是起始位置，第二个是截取的长度，第二个数字可以省略，表示一直截取到最后
+    d = str.substring(1,-1);//和slice差不多 如果前面大于后面，两者互换位置，若超出0到str.length，就截断进行输出
+    e = str.split("b");//分隔符
+    f = str.split("b",1);
+    g = str.split("b",2);//数字表示限定了生成数组的个数
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(d);
+    console.log(e);
+    console.log(f);
+    console.log(g);
+    var str="      a b      c       ";
+    a = str.trim();//将字符串的两端的空格全部删除掉
+    console.log(a);
+
+    var str1="";
+    b=str1.concat("12","34");//将字符串拼接
+    console.log(b);
+
+    var str = "abcdefghijkbcd";
+    a=str.indexOf("bce",1);//查找功能，查到显示起始位置，查不到返回-1,数字表示开始查找的位置
+    console.log(a);
+    b=str.lastIndexOf("bce");//若有重复的在后面优先查找，显示位置.没有同样返回-1
+    console.log(b);
+</script>
+</html>
